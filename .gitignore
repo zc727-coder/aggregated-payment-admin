@@ -1,7 +1,4 @@
-# This repository intentionally contains documentation and contribution evidence only.
-# Do not copy the SpringBlade/Saber framework, dependencies, build artifacts, or local runtime data here.
+# Build artifacts and local runtime data.
 *
 !.gitignore
 !README.md
-!docs/
-!docs/**
