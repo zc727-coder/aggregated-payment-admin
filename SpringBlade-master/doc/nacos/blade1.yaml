@@ -1,0 +1,88 @@
+server:
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 16
+      worker: 400
+
+spring:
+  cloud:
+    sentinel:
+      eager: true
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false
+    livereload:
+      port: 23333
+
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+knife4j:
+  enable: true
+  basic:
+    enable: false
+    username: blade
+    password: blade
+  setting:
+    enableSwaggerModels: true
+    enableDocumentManage: true
+    enableHost: false
+    enableHostText: http://localhost
+    enableRequestCache: true
+    enableFilterMultipartApis: false
+    enableFilterMultipartApiMethodType: POST
+    language: zh_cn
+    enableFooter: false
+    enableFooterCustom: true
+    footerCustomContent: Copyright © 2023 SpringBlade All Rights Reserved
+
+swagger:
+  title: SpringBlade 接口文档系统
+  description: SpringBlade 接口文档系统
+  version: 3.6.0
+  license: Powered By SpringBlade
+  licenseUrl: https://bladex.vip
+  terms-of-service-url: https://bladex.vip
+  contact:
+    name: smallchill
+    email: smallchill@163.com
+    url: https://gitee.com/smallc
+
+blade:
+  token:
+    sign-key: 请配置32位签名提高安全性
+  xss:
+    enabled: true
+    skip-url:
+      - /weixin
+  secure:
+    skip-url:
+      - /test/**
+    client:
+      - client-id: sword
+        path-patterns:
+          - /sword/**
+      - client-id: saber
+        path-patterns:
+          - /saber/**
+  tenant:
+    column: tenant_id
+    tables:
+      - blade_notice
+

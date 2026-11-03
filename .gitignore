@@ -1,4 +1,30 @@
-# Build artifacts and local runtime data.
-*
-!.gitignore
-!README.md
+# Build outputs and dependency caches
+**/target/
+**/node_modules/
+**/dist/
+**/coverage/
+*.jar
+*.war
+*.zip
+
+# IDE and local runtime files
+**/.idea/
+*.iml
+*.log
+**/logs/
+
+# Local environment configuration and credentials
+**/.env
+**/.env.*
+**/application-dev.yml
+**/application-test.yml
+**/application-prod.yml
+**/bootstrap-dev.yml
+**/bootstrap-test.yml
+**/bootstrap-prod.yml
+
+# Framework-local credential files (kept only in the local development copy)
+SpringBlade-master/blade-auth/src/main/resources/application.yml
+SpringBlade-master/blade-ops/blade-resource/src/main/resources/application.yml
+SpringBlade-master/blade-ops/sy-oss/src/main/resources/application.yml
+SpringBlade-master/script/docker/nacos/conf/application.properties
